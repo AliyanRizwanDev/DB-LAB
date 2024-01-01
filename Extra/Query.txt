@@ -1,0 +1,49 @@
+SELECT name
+FROM producer P
+WHERE NOT exists(
+SELECT inColor
+FROM movie M
+WHERE m.producerid=P.pid AND inColor ='BW'
+);
+
+SELECT *
+FROM producer P
+WHERE exists(
+SELECT *
+FROM movie M
+WHERE m.producerid=P.pid
+);
+
+select p.name,m.title
+from producer p inner join movie m on p.pid=m.producerid;
+
+select s.*
+from studio s natural join movie m 
+where m.year='2001';
+
+select p.name
+from producer p
+where p.pid in (
+select producerid
+from movie m
+where  m.title in (
+select s.movieTitle
+from starsin s
+where s.starName='Harrison Ford')
+);
+
+SELECT P.NAME
+FROM producer P INNER JOIN movie M ON P.PID=M.producerid
+WHERE M.title !='Star wars';
+
+SELECT P.NAME
+FROM producer P INNER JOIN movie M ON M.producerid=P.pid
+WHERE M.studio_Name LIKE '%Disney%' OR '%MGM%';
+
+SELECT S.starName
+FROM starsin S
+WHERE exists(
+SELECT *
+FROM movie M
+WHERE m.title=S.movieTitle
+);
