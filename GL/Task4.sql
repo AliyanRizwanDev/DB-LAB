@@ -1,0 +1,1 @@
+alter table `Doctor` add DoctorWard varchar(15);

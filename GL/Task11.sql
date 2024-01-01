@@ -1,0 +1,1 @@
+ALTER TABLE hospitalroom RENAME TO Room;

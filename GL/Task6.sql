@@ -1,0 +1,1 @@
+ALTER TABLE lab MODIFY testamount double;

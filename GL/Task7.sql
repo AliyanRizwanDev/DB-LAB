@@ -1,0 +1,1 @@
+alter table `lab` add labno int;

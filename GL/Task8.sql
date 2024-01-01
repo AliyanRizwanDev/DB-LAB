@@ -1,0 +1,1 @@
+ALTER TABLE lab MODIFY ladid varchar(5);
